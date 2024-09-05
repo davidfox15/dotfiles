@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # load scripting additions
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
@@ -18,7 +20,7 @@ yabai -m config window_gap 0
 # -- mouse settings --
 
 # center mouse on window with focus
-yabai -m config mouse_follows_focus on
+# yabai -m config mouse_follows_focus on
 
 # modifier for clicking and dragging with mouse
 yabai -m config mouse_modifier alt
@@ -60,23 +62,21 @@ function setup_space {
   yabai -m space "$idx" --label "$name"
 }
 
-setup_space 1 desktop
+setup_space 1 notes
 setup_space 2 code
 setup_space 3 web
 setup_space 4 social
-setup_space 5 media
-setup_space 6 other
+setup_space 5 desktop
 
-# Off mange on space 1
-yabai -m config --space 1 layout float
+# Off mange on space 5
+yabai -m config --space 5 layout float
 
-yabai -m rule --add app="^Finder$" space=1
-yabai -m rule --add app="^Obsidian$" space=1
+yabai -m rule --add app="^Finder$" space=5
 yabai -m rule --add app="^iTerm2$" space=2
-# yabai -m rule --add app="^Safari$" space=3
 yabai -m rule --add app="^Chrome$" space=3
-# yabai -m rule --add app="^Yandex$" space=3
 yabai -m rule --add app="^Telegram$" space=4
 yabai -m rule --add app="^Discord$" space=4
+yabai -m rule --add app="^Obsidian$" space=1
+yabai -m rule --add app="^ChatGPT$" space=1
 yabai -m rule --add app="^Яндекс Mузыка$" space=5
 
