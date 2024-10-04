@@ -4,17 +4,22 @@
 
 ## Contents
 
-- zsh confiig
+- zsh config
 - tmux config
 - my scripts
   - tmux-sessionizer
   - tmux-cht.sh
 - git config
-- yabai (skhd) config
+- yabai (skhd) config **OLD**
+- aerospace config
 
 ## What I use
 
-**Part in progress**
+- Terminal - WezTerm
+- Work with sessions - Tmux
+- Work with files - Nvim
+- Version control - Git
+- Tile windows - Aerospace
 
 ## How to use
 
