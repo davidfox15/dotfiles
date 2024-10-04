@@ -19,4 +19,6 @@ config.window_decorations = "RESIZE"
 
 config.color_scheme = "Catppuccin Mocha"
 
+config.use_ime = false
+
 return config
