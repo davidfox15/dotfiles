@@ -8,6 +8,9 @@
 
 !.yabairc
 !.skhdrc
+!.aerospace.toml
+!.gitconfig
+!.wezterm.lua
 
 !.tmux-cht-command
 !.tmux-cht-languages
