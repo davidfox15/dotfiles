@@ -136,11 +136,11 @@ alt-q = 'workspace Q'
 alt-r = 'workspace R'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-alt-shift-1 = 'move-node-to-workspace 1'
-alt-shift-2 = 'move-node-to-workspace 2'
-alt-shift-3 = 'move-node-to-workspace 3'
-alt-shift-4 = 'move-node-to-workspace 4'
-alt-shift-5 = 'move-node-to-workspace 5'
+alt-shift-1 = ['layout tiling', 'move-node-to-workspace 1', 'workspace 1']
+alt-shift-2 = ['layout tiling', 'move-node-to-workspace 2', 'workspace 2']
+alt-shift-3 = ['layout tiling', 'move-node-to-workspace 3', 'workspace 3']
+alt-shift-4 = ['layout tiling', 'move-node-to-workspace 4', 'workspace 4']
+alt-shift-5 = ['layout floating','move-node-to-workspace 5', 'workspace 5']
 alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
@@ -177,8 +177,45 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 [[on-window-detected]]
+# Workspace 1 (gpt, obsidian)
+if.app-id = 'com.openai.chat'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace 2'
+
+# Workspace 2 (iterm2)
+[[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
 run = 'move-node-to-workspace 2'
+
+# Workspace 3
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace 3'
+
+# Workspace 4 (telegram, discord)
+[[on-window-detected]]
+if.app-id = 'ru.keepcoder.Telegram'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = 'move-node-to-workspace 4'
+
+# Workspace 5
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating', 'move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'com.obsproject.obs-studio'
+run = ['layout floating', 'move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'ru.yandex.desktop.music'
+run = ['layout floating','move-node-to-workspace 5']
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'
