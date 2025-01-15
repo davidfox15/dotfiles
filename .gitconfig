@@ -1,7 +1,6 @@
 [core]
 	editor = nvim
 	ignorecase = false
-    ; push.autosetupremote = always
 [color]
   status = auto
   diff = auto
@@ -17,4 +16,7 @@
   logadog = log --graph --oneline --decorate --all
   loginfo = log --all --decorate --graph --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --date=short
 [user]
+	name = David Lisitsyn
 	email = davidfox15@yandex.ru
+[push]
+	autoSetupRemote = true
