@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Функция для обработки команды --start
+start() {
+    echo "Starting the service..."
+    skhd --start-service
+    yabai --start-service
+    sudo yabai --load-sa
+    yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+}
+
+# Функция для обработки команды --stop
+stop() {
+    echo "Stopping the service..."
+    yabai --stop-service
+    skhd --stop-service
+}
+
+# Проверка аргументов командной строки
+case "$1" in
+    --start)
+        start
+        ;;
+    --stop)
+        stop
+        ;;
+    *)
+        echo "Usage: $0 {--start|--stop}"
+        exit 1
+        ;;
+esac

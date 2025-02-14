@@ -1,0 +1,14 @@
+VIM="nvim"
+export GIT_EDITOR=$VIM
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+PATH=~/.local/scripts:$PATH
+
+if [ -f ~/.local/aliases/docker_aliases.sh ]; then
+  source ~/.local/aliases/docker_aliases.sh
+fi
+
+# Where should I put you?
+bindkey -s ^f "tmux-sessionizer\n"
