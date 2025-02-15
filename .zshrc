@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -113,5 +113,31 @@ export PATH=/opt/homebrew/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# cleare agnoster first prompt
+prompt_context(){}
+# change agnoster dir prompt color
+prompt_dir(){
+	prompt_segment '#333333' white ' %~ '
+}
+# off right side git-prompt
+RPROMPT=
+# change color of git-prompt vars
+ZSH_THEME_GIT_PROMPT_PREFIX=
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$bg[yellow]%}"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="%{$fg[black]$bg[yellow]%} |"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[black]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[black]$bg[yellow]%}%{ *%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[black]$bg[yellow]%}%{ x%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[black]$bg[yellow]%}%{ +%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[black]$bg[yellow]%}%{ ↓%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[black]$bg[yellow]%}%{ ↑%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[black]$bg[yellow]%}%{ …%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=
+# change agnoster git status to git-prompt status
+prompt_git() {
+	prompt_segment yellow black "$(git_super_status)"
+}
+
 
 source ~/.zsh_profile
