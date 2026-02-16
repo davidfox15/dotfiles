@@ -4,28 +4,31 @@
 
 ## Contents
 
-- zsh config
-- tmux config
-- my scripts
+- Zsh config
+- Tmux config
+- Scripts
   - tmux-sessionizer
   - tmux-cht.sh
-- git config
-- yabai (skhd) config **OLD**
-- aerospace config
+- Git config
+- Aerospace config
+- Karabiner config (only for mac)
+- Ghostty config
+- Opencode AGENTS.md
 
 ## What I use
 
-- Terminal - WezTerm
+- Terminal - Ghostty
 - Work with sessions - Tmux
 - Work with files - Nvim
 - Version control - Git
-- Tile windows - Aerospace
+- Tile manager - Aerospace
+- Remap keys - Karabiner
+- AI helper - Opencode
 
 ## How to use
 
-**Part in progress**
+- You need to use stow to copy the files to your home directory
 
-## About me
+Install (mac os) with brew
 
-- [linkedin](https://www.linkedin.com/in/david-lisitsyn-894860248/)
-- [x (twitter)](https://x.com/chushfrog)
+`brew install stow`
