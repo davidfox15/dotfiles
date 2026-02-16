@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# URL передаём как аргумент, по умолчанию Google
+URL=${1:-"https://www.chatgpt.com/c/68e8eaf9-0d10-8328-9c2b-6ec27f557474"}
+
+# Определяем команду для открытия
+if command -v xdg-open >/dev/null 2>&1; then
+    # Linux
+    xdg-open "$URL" &
+elif command -v open >/dev/null 2>&1; then
+    # macOS
+    open "$URL" &
+else
+    echo "❌ Не найден подходящий способ открыть URL."
+    exit 1
+fi
